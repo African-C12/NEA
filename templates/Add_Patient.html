@@ -1,0 +1,59 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Add New Patient{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Add New Patient</h3>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="id_First_Name" class="form-label">First Name</label>
+                    {{ form.First_Name|addclass:"form-control" }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="id_Last_Name" class="form-label">Last Name</label>
+                    {{ form.Last_Name|addclass:"form-control" }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="id_Date_of_Birth" class="form-label">Date of Birth</label>
+                    {{ form.Date_of_Birth|addclass:"form-control" }}
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="id_Patient_Email" class="form-label">Email</label>
+                    {{ form.Patient_Email|addclass:"form-control" }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="id_Patient_Gender" class="form-label">Gender</label>
+                    {{ form.Patient_Gender|addclass:"form-select" }}
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="id_Patient_Age" class="form-label">Age</label>
+                    {{ form.Patient_Age|addclass:"form-control" }}
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="id_Patient_Phone" class="form-label">Phone</label>
+                    {{ form.Patient_Phone|addclass:"form-control" }}
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="id_Address" class="form-label">Address</label>
+                {{ form.Address|addclass:"form-control" }}
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">Add Patient</button>
+                <a href="{% url 'patient_list' %}" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
