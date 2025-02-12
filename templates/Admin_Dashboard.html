@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-4">Admin Dashboard</h1>
+    
+    <div class="row">
+        <!-- Patients Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Patients</h5>
+                    <p class="card-text">Manage patient records and appointments.</p>
+                    <a href="{% url 'patient_list' %}" class="btn btn-primary">View Patients</a>
+                    <a href="{% url 'add_patient' %}" class="btn btn-outline-primary">Add Patient</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Doctors Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Doctors</h5>
+                    <p class="card-text">Manage doctor profiles and schedules.</p>
+                    <a href="{% url 'doctor_list' %}" class="btn btn-primary">View Doctors</a>
+                    <a href="{% url 'add_doctor' %}" class="btn btn-outline-primary">Add Doctor</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appointments Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Appointments</h5>
+                    <p class="card-text">View and manage patient appointments.</p>
+                    <a href="{% url 'appointment_list' %}" class="btn btn-primary">View Appointments</a>
+                    <a href="{% url 'add_appointment' %}" class="btn btn-outline-primary">New Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

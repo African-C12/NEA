@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Dashboard{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-4">Patient Dashboard</h1>
+    
+    <div class="row">
+        <!-- Appointments Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Appointments</h5>
+                    <p class="card-text">View and manage your appointments.</p>
+                    <a href="{% url 'appointment_list' %}" class="btn btn-primary">View Appointments</a>
+                    <a href="{% url 'add_appointment' %}" class="btn btn-outline-primary">New Appointment</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prescriptions Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Prescriptions</h5>
+                    <p class="card-text">View your prescriptions.</p>
+                    <a href="{% url 'prescription_list' %}" class="btn btn-primary">View Prescriptions</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Profile</h5>
+                    <p class="card-text">View and update your profile information.</p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
